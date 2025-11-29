@@ -9,6 +9,14 @@ This project implements a real-time monitoring and alerting system to track serv
 - **Slack** – notifications for high CPU / memory / node down  
 
 ---
+## 📷 Screenshots
+
+| Description            | Image |
+|------------------------|-------|
+| Prometheus Targets     | ![Prometheus Targets](screenshots/prometheus-targets.png) |
+| Grafana Dashboard      | ![Grafana Dashboard](screenshots/grafana-dashboard.png) |
+| Prometheus Alerts View | ![Prometheus Alerts](screenshots/prometheus-alerts.png) |
+| Slack Notification     | ![Slack Alert](screenshots/slack-alert.png) |
 
 ## 🚀 Tech Stack
 
