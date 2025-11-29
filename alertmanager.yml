@@ -1,0 +1,23 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: "slack-notifications"
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+
+receivers:
+  - name: "slack-notifications"
+    slack_configs:
+        send_resolved: true
+        channel: "#alerts"
+        title: "⚠️ Prometheus Alert: {{ .CommonLabels.alertname }}"
+        text: |
+          *Status:* {{ .Status }}
+          *Instance:* {{ .CommonLabels.instance }}
+          *Severity:* {{ .CommonLabels.severity }}
+          *Summary:* {{ .CommonAnnotations.summary }}
+          *Description:* {{ .CommonAnnotations.description }}
+
